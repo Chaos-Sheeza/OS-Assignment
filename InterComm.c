@@ -38,7 +38,7 @@ void exitFun(char *arg[])
     // Exits loop when input is exit.
     if (arg[1] == NULL)
     {
-        printf("Thank you for using this shell.\nPsych, gettatta hiiieee!\n");
+        printf("Thank you for using this shell.\n");
         // Unclear what to output.
         setenv("EXITCODE", "EXIT_SUCCESS", 1);
         exit(0);
@@ -46,6 +46,7 @@ void exitFun(char *arg[])
     else
     {
         printf("Exit requires no arguments");
+        setenv("EXITCODE", "EXIT_FAILURE", 1);
     }
 }
 
@@ -54,7 +55,8 @@ void printFun(char *arg[], int argnum)
 {
     if (arg[1] == NULL)
     {
-        printf("Why would you want to print nothing? What's wrong with you?\n");
+        printf("Why would you want to print nothing? It's a print function.\n");
+        setenv("EXITCODE", "EXIT_FAILURE", 1);
     }
     else
     {
@@ -78,6 +80,7 @@ void printFun(char *arg[], int argnum)
             }
         }
         printf("\n");
+        setenv("EXITCODE", "EXIT_SUCCESS", 1);
     }
 }
 
@@ -87,10 +90,12 @@ void changeDir(char *arg[])
     if (arg[1] == NULL || arg[2] != NULL)
     {
         printf("Input directory as argument, without spaces.\n");
+        setenv("EXITCODE", "EXIT_FAILURE", 1);
     }
     else
     {
         setenv("CWD", arg[1], 1);
+        setenv("EXITCODE", "EXIT_SUCCESS", 1);
     }
 }
 
@@ -100,6 +105,7 @@ void printAll(char *arg[])
     if (arg[1] != NULL)
     {
         printf("Function requires no arguments.\n");
+        setenv("EXITCODE", "EXIT_FAILURE", 1);
     }
     else
     {
@@ -110,6 +116,7 @@ void printAll(char *arg[])
         printf("HOME=%s\n", getenv("HOME"));
         printf("CWD=%s\n", getenv("CWD"));
         printf("TERMINAL=%s\n", getenv("TERMINAL"));
+        setenv("EXITCODE", "EXIT_SUCCESS", 1);
     }
 }
 
@@ -121,6 +128,7 @@ void sourceComm(char *arg[])
         if (fp == NULL)
         {
             printf("File not found\n");
+            setenv("EXITCODE", "EXIT_FAILURE", 1);
             return;
         }
         else
@@ -154,9 +162,11 @@ void sourceComm(char *arg[])
             }
         }
         fclose(fp);
+        setenv("EXITCODE", "EXIT_SUCCESS", 1);
     }
     else
     {
         printf("Command takes one file name as argument");
+        setenv("EXITCODE", "EXIT_FAILURE", 1);
     }
 }

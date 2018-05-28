@@ -1,0 +1,1 @@
+void out1(char *args[], int argnum);

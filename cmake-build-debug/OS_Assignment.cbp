@@ -99,6 +99,12 @@
 		<Unit filename="/home/jesmar/Desktop/OS_Assignment/main.c">
 			<Option target="eggshell"/>
 		</Unit>
+		<Unit filename="/home/jesmar/Desktop/OS_Assignment/redir.c">
+			<Option target="eggshell"/>
+		</Unit>
+		<Unit filename="/home/jesmar/Desktop/OS_Assignment/redir.h">
+			<Option target="eggshell"/>
+		</Unit>
 		<Unit filename="/home/jesmar/Desktop/OS_Assignment/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

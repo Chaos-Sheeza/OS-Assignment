@@ -231,6 +231,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/eggshell.dir/build.make CMakeFiles/eggshell.dir/main.c.s
 .PHONY : main.c.s
 
+redir.o: redir.c.o
+
+.PHONY : redir.o
+
+# target to build an object file
+redir.c.o:
+	$(MAKE) -f CMakeFiles/eggshell.dir/build.make CMakeFiles/eggshell.dir/redir.c.o
+.PHONY : redir.c.o
+
+redir.i: redir.c.i
+
+.PHONY : redir.i
+
+# target to preprocess a source file
+redir.c.i:
+	$(MAKE) -f CMakeFiles/eggshell.dir/build.make CMakeFiles/eggshell.dir/redir.c.i
+.PHONY : redir.c.i
+
+redir.s: redir.c.s
+
+.PHONY : redir.s
+
+# target to generate assembly for a file
+redir.c.s:
+	$(MAKE) -f CMakeFiles/eggshell.dir/build.make CMakeFiles/eggshell.dir/redir.c.s
+.PHONY : redir.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -252,6 +279,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... redir.o"
+	@echo "... redir.i"
+	@echo "... redir.s"
 .PHONY : help
 
 

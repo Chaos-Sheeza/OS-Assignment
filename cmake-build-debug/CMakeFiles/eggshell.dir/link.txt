@@ -1,1 +1,1 @@
-/usr/bin/cc -g   CMakeFiles/eggshell.dir/main.c.o CMakeFiles/eggshell.dir/InterComm.c.o CMakeFiles/eggshell.dir/ExterComm.c.o CMakeFiles/eggshell.dir/linenoise-master/linenoise.c.o  -o eggshell 
+/usr/bin/cc -g   CMakeFiles/eggshell.dir/main.c.o CMakeFiles/eggshell.dir/InterComm.c.o CMakeFiles/eggshell.dir/ExterComm.c.o CMakeFiles/eggshell.dir/linenoise-master/linenoise.c.o CMakeFiles/eggshell.dir/redir.c.o  -o eggshell 

@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/eggshell.dir/InterComm.c.o"
   "CMakeFiles/eggshell.dir/ExterComm.c.o"
   "CMakeFiles/eggshell.dir/linenoise-master/linenoise.c.o"
+  "CMakeFiles/eggshell.dir/redir.c.o"
   "eggshell.pdb"
   "eggshell"
 )

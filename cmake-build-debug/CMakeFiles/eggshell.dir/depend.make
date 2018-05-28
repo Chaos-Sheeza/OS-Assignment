@@ -15,4 +15,7 @@ CMakeFiles/eggshell.dir/main.c.o: ../ExterComm.h
 CMakeFiles/eggshell.dir/main.c.o: ../InterComm.h
 CMakeFiles/eggshell.dir/main.c.o: ../linenoise-master/linenoise.h
 CMakeFiles/eggshell.dir/main.c.o: ../main.c
+CMakeFiles/eggshell.dir/main.c.o: ../redir.h
+
+CMakeFiles/eggshell.dir/redir.c.o: ../redir.c
 

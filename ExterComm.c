@@ -8,20 +8,22 @@
 
 pid_t pid;
 
-void exComm(char *arg[], int argnum)
+void exComm(char *arg[])
 {
     int     check = 0;
     char    *path,
             *buf = malloc(255),
             *searchpath;
+
     path = strdup(getenv("PATH"));
     searchpath = strtok(path, ":");
-    while (searchpath != NULL) {
-        //printf("Path:%s\n", path);
-        //printf("Search:%s\n", searchpath);
+
+    while (searchpath != NULL)
+    {
         strcpy(buf, searchpath);
         strcat(buf, "/");
         strcat(buf, arg[0]);
+
         if (access(buf, X_OK) == 0) {
             check = 1;
             pid = fork();
@@ -36,12 +38,16 @@ void exComm(char *arg[], int argnum)
                 waitpid(pid, &stat, WUNTRACED);
             }
         }
+
         if (check==1) {
             break;
         }
+
         searchpath = strtok(NULL, ":");
+        setenv("EXITCODE", "EXIT_SUCCESS", 1);
     }
     if (check==0) {
         printf("Function does not exist.\n");
+        setenv("EXITCODE", "EXIT_FAILURE", 1);
     }
 }

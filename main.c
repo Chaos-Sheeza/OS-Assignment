@@ -5,6 +5,7 @@
 #include "linenoise-master/linenoise.h"
 #include "InterComm.h"
 #include "ExterComm.h"
+#include "redir.h"
 
 #define MAX_ARGS 255
 
@@ -18,12 +19,16 @@ int tokenIndex;
 // Basic main with arguments: find out what arguments will be used for.
 int main(int argc, char *argv[])
 {
-    char *path = malloc(sizeof(char)*255);
-    // getcwd() is returning nothing.
+    pid_t pid = getpid();
+    char    path[255],
+            pidpath[BUFSIZ];
+    readlink("/proc/self/exe", pidpath, BUFSIZ);
+    // getcwd() returns the current working directory.
     getcwd(path, sizeof(path));
-    setenv("PROMPT","Enter a Command Fool >", 1);
+    setenv("PROMPT","Enter a Command Fool: ", 1);
     setenv("CWD", path, 1);
-    setenv("SHELL", "/bin/eggshell", 1);
+    // Wanted to create a function that determines the binary location of the eggshell.
+    setenv("SHELL", pidpath, 1);
     setenv("TERMINAL", ttyname(STDIN_FILENO), 1);
     // Unclear what to output.
     setenv("EXITCODE", "not set", 0);
@@ -49,7 +54,13 @@ int main(int argc, char *argv[])
 
         if (arg[0] != NULL)
         {
-            if (strchr(arg[0], '=') != NULL) {
+/*
+            if(strchr(line, '>') == 0)
+            {
+                out1(arg, tokenIndex);
+            }
+            else
+          */if (strchr(arg[0], '=') != NULL) {
                 char *temp = strtok(arg[0], "="),
                         *temp2 = strtok(NULL, "=");
                 if (strchr(temp2, '$') != NULL) {
@@ -65,7 +76,7 @@ int main(int argc, char *argv[])
             }
             else
             {
-                exComm(arg, tokenIndex);
+                exComm(arg);
             }
         }
 
@@ -75,6 +86,7 @@ int main(int argc, char *argv[])
     return 0;
 }
 
+// Function to find shell name.
 void setpath(void)
 {
 

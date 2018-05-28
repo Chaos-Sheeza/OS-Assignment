@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/jesmar/Desktop/OS_Assignment/InterComm.c" "/home/jesmar/Desktop/OS_Assignment/cmake-build-debug/CMakeFiles/eggshell.dir/InterComm.c.o"
   "/home/jesmar/Desktop/OS_Assignment/linenoise-master/linenoise.c" "/home/jesmar/Desktop/OS_Assignment/cmake-build-debug/CMakeFiles/eggshell.dir/linenoise-master/linenoise.c.o"
   "/home/jesmar/Desktop/OS_Assignment/main.c" "/home/jesmar/Desktop/OS_Assignment/cmake-build-debug/CMakeFiles/eggshell.dir/main.c.o"
+  "/home/jesmar/Desktop/OS_Assignment/redir.c" "/home/jesmar/Desktop/OS_Assignment/cmake-build-debug/CMakeFiles/eggshell.dir/redir.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

@@ -85,4 +85,14 @@ InterComm.h
 /home/jesmar/Desktop/OS_Assignment/InterComm.h
 ExterComm.h
 /home/jesmar/Desktop/OS_Assignment/ExterComm.h
+redir.h
+/home/jesmar/Desktop/OS_Assignment/redir.h
+
+/home/jesmar/Desktop/OS_Assignment/redir.c
+stdlib.h
+-
+stdio.h
+-
+
+/home/jesmar/Desktop/OS_Assignment/redir.h
 

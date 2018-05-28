@@ -1,1 +1,1 @@
-void exComm(char *arg[], int argnum);
+void exComm(char *arg[]);
